@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 # OpenRouter Configuration
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "").strip()
 
 # Robust Model List (Fallback in order)
 MODELS = [
@@ -34,7 +34,7 @@ MODELS = [
 ]
 
 client = None
-if OPENROUTER_API_KEY:
+if OPENROUTER_API_KEY and OPENROUTER_API_KEY != "your_openrouter_api_key_here":
     client = openai.OpenAI(
         base_url="https://openrouter.ai/api/v1",
         api_key=OPENROUTER_API_KEY,
@@ -89,7 +89,7 @@ async def chat(request: ChatRequest):
                 model=current_model,
                 messages=messages,
                 extra_headers={
-                    "HTTP-Referer": "https://localhost:5173",
+                    "HTTP-Referer": "http://localhost:3000",
                     "X-Title": "Nabeel AI Portfolio",
                 }
             )
