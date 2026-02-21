@@ -25,10 +25,11 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # Robust Model List (Fallback in order)
 MODELS = [
-    "openrouter/auto",
+    "openrouter/free",
     "google/gemini-2.0-flash-lite:free",
     "meta-llama/llama-3.3-70b-instruct:free",
     "mistralai/mistral-7b-instruct:free",
+    "deepseek/deepseek-chat:free",
     "qwen/qwen-2-7b-instruct:free"
 ]
 

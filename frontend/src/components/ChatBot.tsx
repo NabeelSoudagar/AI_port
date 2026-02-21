@@ -27,8 +27,14 @@ const ChatBot: React.FC = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message, history })
             });
+
             const data = await res.json();
-            setHistory(prev => [...prev, { role: 'assistant', content: data.response }]);
+
+            if (!res.ok) {
+                setHistory(prev => [...prev, { role: 'assistant', content: `AI Error: ${data.detail || 'The server encountered an issue.'}` }]);
+            } else {
+                setHistory(prev => [...prev, { role: 'assistant', content: data.response }]);
+            }
         } catch (err) {
             setHistory(prev => [...prev, { role: 'assistant', content: "Error connecting to AI. Is the backend running?" }]);
         } finally {
