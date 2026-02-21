@@ -1,0 +1,142 @@
+{
+    "basics": {
+        "name": "Nabeel Soudagar",
+        "label": "Full Stack Developer | CS Engineering Student",
+        "email": "nabeelsoudagar1050@gmail.com",
+        "phone": "+91 7022461499",
+        "summary": "Final year Computer Science Engineering student with hands-on experience in building and maintaining web applications. Proven ability to apply computer science principles to solve complex coding challenges and improve system performance. Gained valuable industry insights through a professional internship at VTU VRIF, focusing on real-world IT workflows and collaborative development.",
+        "location": {
+            "city": "Belgaum",
+            "region": "Karnataka",
+            "country": "India"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "url": "https://github.com/NabeelSoudagar"
+            },
+            {
+                "network": "LinkedIn",
+                "url": "https://www.linkedin.com/in/nabeel-soudagar-036752285/"
+            }
+        ]
+    },
+    "education": [
+        {
+            "institution": "S G Balekundri Institute of Technology",
+            "area": "Computer Science & Engineering",
+            "studyType": "B.E.",
+            "startDate": "2022",
+            "endDate": "Present",
+            "score": "7.8"
+        },
+        {
+            "institution": "Islamiya P U College Camp",
+            "area": "PUC",
+            "startDate": "2020",
+            "endDate": "2022",
+            "score": "70%"
+        },
+        {
+            "institution": "Islamiya High School Camp",
+            "area": "SSLC",
+            "endDate": "2020",
+            "score": "87%"
+        }
+    ],
+    "work": [
+        {
+            "company": "VRIF (VTU)",
+            "position": "Full Stack Developer Intern",
+            "startDate": "2024",
+            "endDate": "2024",
+            "summary": "Duration: 8 Months. Focused on real-world IT workflows and collaborative development within the VTU VRIF framework."
+        }
+    ],
+    "skills": [
+        {
+            "name": "Programming Languages",
+            "keywords": [
+                "C",
+                "Java",
+                "Python",
+                "JavaScript"
+            ]
+        },
+        {
+            "name": "Frontend Tech",
+            "keywords": [
+                "HTML",
+                "CSS",
+                "React",
+                "Vue",
+                "Tailwind CSS"
+            ]
+        },
+        {
+            "name": "Backend & Database",
+            "keywords": [
+                "Node.js",
+                "Express.js",
+                "PHP",
+                "FastAPI",
+                "MySQL",
+                "PostgreSQL",
+                "MongoDB"
+            ]
+        },
+        {
+            "name": "Tools & Platforms",
+            "keywords": [
+                "Git",
+                "GitHub",
+                "VS Code",
+                "Supabase",
+                "Vercel",
+                "Render"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "AI Image Detector",
+            "description": "AI-powered image detector which identify the image is generated using AI or it is a real image.",
+            "url": "https://image-detector-1.onrender.com/",
+            "techStack": "React.js, Node.js, Express.js, PostgreSQL, Supabase, Gemini API"
+        },
+        {
+            "name": "Telemedicine Healthcare",
+            "description": "Virtual consultation platform enabling remote doctor-patient interaction, appointment booking, and digital health monitoring.",
+            "url": "https://sih-copy-iota.vercel.app/",
+            "techStack": "Vue.js, Node.js, Express js, Supabase, Postgresql"
+        },
+        {
+            "name": "Civil Project",
+            "description": "A full-service construction and infrastructure development firm offering end-to-end solutions from initial planning and design to construction execution.",
+            "url": "https://infinitygroup.tech/",
+            "techStack": "HTML, Tailwind CSS, JavaScript"
+        },
+        {
+            "name": "Print_My_Document",
+            "description": "Online document upload and instant printing service with secure file handling and easy user interface.",
+            "url": "https://print-my-doc.vercel.app/",
+            "techStack": "Vue.js, Node.js, PostgreSQL, Supabase"
+        },
+        {
+            "name": "Personal Chef at Fingertips",
+            "description": "AI-based mini project that recommends recipes based on ingredients and user preferences.",
+            "url": "https://github.com/NabeelSoudagar",
+            "techStack": "HTML, CSS, Javascript, Php, Mysql"
+        }
+    ],
+    "awards": [
+        {
+            "title": "Best boy in 10th",
+            "awarder": "Islamiya High School"
+        },
+        {
+            "title": "District level chess player",
+            "awarder": "District Sports Authority"
+        }
+    ]
+}
