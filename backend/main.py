@@ -23,6 +23,14 @@ app.add_middleware(
 # OpenRouter Configuration
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "").strip()
 
+# Diagnostic check (Safe)
+if OPENROUTER_API_KEY:
+    print(f"API Key detected: {OPENROUTER_API_KEY[:6]}...{OPENROUTER_API_KEY[-4:]}")
+    if not OPENROUTER_API_KEY.startswith("sk-or-v1-"):
+        print("WARNING: API Key does not start with 'sk-or-v1-'. It may be incorrectly formatted.")
+else:
+    print("CRITICAL: OPENROUTER_API_KEY is empty!")
+
 # Robust Model List (Fallback in order)
 MODELS = [
     "openrouter/free",
