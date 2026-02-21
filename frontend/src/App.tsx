@@ -11,7 +11,7 @@ const App: React.FC = () => {
   const [portfolio, setPortfolio] = useState<any>(null)
 
   useEffect(() => {
-    fetch('http://localhost:8000/portfolio')
+    fetch('https://ai-port.onrender.com/portfolio')
       .then(res => res.json())
       .then(data => setPortfolio(data))
       .catch(err => console.error("Error fetching portfolio:", err))
