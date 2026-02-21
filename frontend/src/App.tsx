@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Experience from './components/Experience'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import ChatBot from './components/ChatBot'
+import Navbar from './components/Navbar.tsx'
+import Hero from './components/Hero.tsx'
+import Experience from './components/Experience.tsx'
+import Skills from './components/Skills.tsx'
+import Projects from './components/Projects.tsx'
+import ChatBot from './components/ChatBot.tsx'
 import './index.css'
 
 const App: React.FC = () => {
