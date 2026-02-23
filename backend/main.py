@@ -48,15 +48,15 @@ if OPENROUTER_API_KEY and OPENROUTER_API_KEY != "your_openrouter_api_key_here":
         api_key=OPENROUTER_API_KEY,
     )
 
-# Load Resume Data
-RESUME_DATA = {}
-try:
-    resume_path = os.path.join(os.path.dirname(__file__), "resume.json")
-    with open(resume_path, "r") as f:
-        RESUME_DATA = json.load(f)
-except Exception as e:
-    print(f"Error loading resume: {e}")
-    RESUME_DATA = {"error": f"Could not load resume: {str(e)}"}
+# Function to Load Resume Data Dynamically
+def get_resume():
+    try:
+        resume_path = os.path.join(os.path.dirname(__file__), "resume.json")
+        with open(resume_path, "r") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Error loading resume: {e}")
+        return {"error": f"Could not load resume: {str(e)}"}
 
 class ChatRequest(BaseModel):
     message: str
@@ -68,17 +68,18 @@ async def root():
 
 @app.get("/portfolio")
 async def get_portfolio():
-    return RESUME_DATA
+    return get_resume()
 
 @app.post("/chat")
 async def chat(request: ChatRequest):
     if not client or not OPENROUTER_API_KEY or OPENROUTER_API_KEY == "your_openrouter_api_key_here":
         return {"response": "API Key is missing or invalid. Please add it to the backend .env file and restart."}
 
+    resume = get_resume()
     system_prompt = f"""
-    You are an AI assistant for {RESUME_DATA.get('basics', {}).get('name', 'Nabeel Soudagar')}'s portfolio. 
+    You are an AI assistant for {resume.get('basics', {}).get('name', 'Nabeel Soudagar')}'s portfolio. 
     Answer questions about their career, skills, and projects based on this data:
-    {json.dumps(RESUME_DATA, indent=2)}
+    {json.dumps(resume, indent=2)}
     
     Rules: Be professional, friendly, and concise. Never fabricate facts. If asked something not in the data, refer them to Nabeel's contact info.
     """
