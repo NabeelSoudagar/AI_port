@@ -3,7 +3,7 @@ import Magnetic from './Magnetic.tsx';
 
 const Navbar: React.FC = () => {
     return (
-        <nav className="glass" style={{
+        <nav className="glass navbar-container" style={{
             position: 'sticky',
             top: '1rem',
             margin: '1rem 2rem',
@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
             <div className="gradient-text" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
                 PortfoliAI
             </div>
-            <div style={{ display: 'flex', gap: '2rem' }}>
+            <div style={{ display: 'flex', gap: '2rem' }} className="navbar-links">
                 {['Home', 'Skills', 'Experience', 'Projects'].map((item) => (
                     <Magnetic key={item} strength={0.3}>
                         <a

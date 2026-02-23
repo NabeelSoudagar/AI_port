@@ -157,3 +157,92 @@ h3 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Base Responsive Typography and Spacing */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.8rem !important;
+  }
+
+  h3 {
+    font-size: 1.4rem !important;
+  }
+
+  .glass {
+    padding: 1.5rem !important;
+  }
+
+  .hero-container {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding-top: 2rem !important;
+  }
+
+  .hero-image-container {
+    flex: 0 0 300px !important;
+    height: 300px !important;
+    margin-top: 2rem;
+  }
+
+  .hero-buttons {
+    justify-content: center !important;
+  }
+
+  .navbar-container {
+    margin: 1rem !important;
+    padding: 0.8rem 1.2rem !important;
+  }
+
+  .navbar-links {
+    gap: 1rem !important;
+  }
+
+  .nav-link {
+    font-size: 0.9rem !important;
+  }
+
+  /* Chatbot Mobile Fixes */
+  .chatbot-container {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .chatbot-suggestions-panel {
+    display: none !important;
+    /* Hide suggestions by default on mobile to save space */
+  }
+
+  .chatbot-window {
+    width: calc(100vw - 2rem) !important;
+    height: 400px !important;
+    max-width: 400px;
+  }
+
+  /* Projects Grid Mobile fix */
+  #projects div {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+}

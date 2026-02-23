@@ -15,7 +15,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ basics }) => {
     return (
-        <section id="home" className="animate-fade" style={{
+        <section id="home" className="animate-fade hero-container" style={{
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({ basics }) => {
                     {basics?.summary}
                 </p>
 
-                <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '2.5rem' }}>
+                <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '2.5rem' }} className="hero-buttons">
                     {basics?.profiles?.map((profile, i) => (
                         <Magnetic key={i} strength={0.3}>
                             <a
@@ -64,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({ basics }) => {
                     ))}
                 </div>
 
-                <div style={{ display: 'flex', gap: '1rem' }}>
+                <div style={{ display: 'flex', gap: '1rem' }} className="hero-buttons">
                     <Magnetic strength={0.2}>
                         <a href="/resume_nabeel_soudagar.pdf" download="Nabeel_Soudagar_Resume.pdf" style={{ textDecoration: 'none', display: 'inline-block' }}>
                             <button className="glass" style={{ padding: '1rem 2.5rem', background: 'var(--primary)', color: 'white', fontWeight: '600' }}>
@@ -80,7 +80,7 @@ const Hero: React.FC<HeroProps> = ({ basics }) => {
                 </div>
             </div>
 
-            <div className="float" style={{
+            <div className="float hero-image-container" style={{
                 flex: '0 0 400px',
                 height: '400px',
                 position: 'relative',

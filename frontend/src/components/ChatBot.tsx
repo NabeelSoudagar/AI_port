@@ -51,9 +51,9 @@ const ChatBot: React.FC = () => {
     };
 
     return (
-        <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 2000, display: 'flex', alignItems: 'flex-end', gap: '1rem' }}>
+        <div className="chatbot-container" style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 2000, display: 'flex', alignItems: 'flex-end', gap: '1rem' }}>
             {isOpen && (
-                <div className="glass" style={{
+                <div className="glass chatbot-suggestions-panel" style={{
                     width: '200px',
                     padding: '1rem',
                     display: 'flex',
@@ -95,7 +95,7 @@ const ChatBot: React.FC = () => {
             )}
 
             {isOpen ? (
-                <div className="glass" style={{ width: '350px', height: '500px', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 25px rgba(0,0,0,0.5)' }}>
+                <div className="glass chatbot-window" style={{ width: '350px', height: '500px', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 25px rgba(0,0,0,0.5)' }}>
                     <div style={{ padding: '1rem', borderBottom: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span style={{ fontWeight: 'bold' }}>Chat with my Resume AI</span>
                         <button onClick={() => setIsOpen(false)} style={{ background: 'transparent', color: 'var(--text-main)', fontSize: '1.2rem' }}>×</button>
