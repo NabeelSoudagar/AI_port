@@ -48,8 +48,8 @@
         {
             "company": "VRIF (VTU)",
             "position": "Full Stack Developer Intern",
-            "startDate": "2024",
-            "endDate": "2024",
+            "startDate": "2025",
+            "endDate": "2025",
             "summary": "Duration: 8 Months. Focused on real-world IT workflows and collaborative development within the VTU VRIF framework."
         }
     ],
@@ -123,10 +123,10 @@
             "techStack": "Vue.js, Node.js, PostgreSQL, Supabase"
         },
         {
-            "name": "Personal Chef at Fingertips",
-            "description": "AI-based mini project that recommends recipes based on ingredients and user preferences.",
-            "url": "https://github.com/NabeelSoudagar",
-            "techStack": "HTML, CSS, Javascript, Php, Mysql"
+            "name": "EGGZOTIKA",
+            "description": " Built a custom web application for EggZotika to streamline their digital branding and customer outreach.",
+            "url": "https://eggzotika.netlify.app/",
+            "techStack": "react js "
         }
     ],
     "awards": [

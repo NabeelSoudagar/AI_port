@@ -15,14 +15,14 @@ const Experience: React.FC<ExperienceProps> = ({ work }) => {
         <section id="experience">
             <h2 style={{ textAlign: 'center' }}>Professional <span className="gradient-text">Journey</span></h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', marginTop: '3rem' }}>
-                {work?.map((item, i) => (
-                    <div key={i} className="glass" style={{ padding: '2rem' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                            <h3 style={{ color: 'var(--primary)', margin: 0 }}>{item.position}</h3>
-                            <span style={{ color: 'var(--text-dim)' }}>{item.startDate} — {item.endDate}</span>
+                {work?.map((exp, i) => (
+                    <div key={i} className="glass" style={{ padding: '2rem', transition: 'all 0.3s ease' }}>
+                        <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>{exp.position}</h3>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-dim)', marginBottom: '1rem', flexWrap: 'wrap' }}>
+                            <span style={{ fontWeight: '600' }}>{exp.company}</span>
+                            <span>{exp.startDate} - {exp.endDate}</span>
                         </div>
-                        <h4 style={{ color: 'var(--text-main)', marginBottom: '1rem' }}>{item.company}</h4>
-                        <p style={{ color: 'var(--text-dim)' }}>{item.summary}</p>
+                        <p style={{ color: 'var(--text-dim)' }}>{exp.summary}</p>
                     </div>
                 ))}
             </div>

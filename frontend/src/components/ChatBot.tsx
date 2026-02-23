@@ -7,25 +7,33 @@ const ChatBot: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
 
+    const suggestions = [
+        "What are his strongest skills?",
+        "Does he know React?",
+        "Show backend projects",
+        "Why should we hire him?"
+    ];
+
     useEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
     }, [history]);
 
-    const handleSend = async () => {
-        if (!message.trim()) return;
+    const handleSend = async (customMessage?: string) => {
+        const textToSend = customMessage || message;
+        if (!textToSend.trim()) return;
 
-        const userMsg = { role: 'user', content: message };
+        const userMsg = { role: 'user', content: textToSend };
         setHistory(prev => [...prev, userMsg]);
-        setMessage('');
+        if (!customMessage) setMessage('');
         setLoading(true);
 
         try {
             const res = await fetch('https://ai-port.onrender.com/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message, history })
+                body: JSON.stringify({ message: textToSend, history })
             });
 
             const data = await res.json();
@@ -43,7 +51,49 @@ const ChatBot: React.FC = () => {
     };
 
     return (
-        <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 2000 }}>
+        <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 2000, display: 'flex', alignItems: 'flex-end', gap: '1rem' }}>
+            {isOpen && (
+                <div className="glass" style={{
+                    width: '200px',
+                    padding: '1rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.8rem',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
+                    maxHeight: '400px',
+                    overflowY: 'auto'
+                }}>
+                    <span style={{ fontWeight: 'bold', fontSize: '0.9rem', color: 'var(--primary)' }}>Ask me:</span>
+                    {suggestions.map((q, i) => (
+                        <button
+                            key={i}
+                            onClick={() => handleSend(q)}
+                            style={{
+                                background: 'rgba(255,255,255,0.05)',
+                                border: '1px solid var(--glass-border)',
+                                borderRadius: '8px',
+                                padding: '0.5rem',
+                                fontSize: '0.8rem',
+                                textAlign: 'left',
+                                color: 'var(--text-dim)',
+                                transition: 'all 0.3s ease',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
+                                e.currentTarget.style.color = 'var(--text-main)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+                                e.currentTarget.style.color = 'var(--text-dim)';
+                            }}
+                        >
+                            {q}
+                        </button>
+                    ))}
+                </div>
+            )}
+
             {isOpen ? (
                 <div className="glass" style={{ width: '350px', height: '500px', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 25px rgba(0,0,0,0.5)' }}>
                     <div style={{ padding: '1rem', borderBottom: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -75,7 +125,7 @@ const ChatBot: React.FC = () => {
                             placeholder="Ask me anything..."
                             style={{ flex: 1, background: 'rgba(0,0,0,0.2)', border: '1px solid var(--glass-border)', borderRadius: '8px', padding: '0.5rem', color: 'white' }}
                         />
-                        <button onClick={handleSend} style={{ background: 'var(--primary)', padding: '0.5rem 1rem' }}>Send</button>
+                        <button onClick={() => handleSend()} style={{ background: 'var(--primary)', padding: '0.5rem 1rem' }}>Send</button>
                     </div>
                 </div>
             ) : (
@@ -83,7 +133,8 @@ const ChatBot: React.FC = () => {
                     onClick={() => setIsOpen(true)}
                     style={{
                         width: '60px', height: '60px', borderRadius: '50%', background: 'linear-gradient(45deg, var(--primary), var(--secondary))',
-                        color: 'white', fontSize: '1.8rem', boxShadow: '0 5px 15px rgba(0,210,255,0.4)'
+                        color: 'white', fontSize: '1.8rem', boxShadow: '0 5px 15px rgba(0,210,255,0.4)',
+                        cursor: 'pointer'
                     }}
                 >
                     💬

@@ -1,4 +1,5 @@
 import React from 'react';
+import Magnetic from './Magnetic.tsx';
 
 const Navbar: React.FC = () => {
     return (
@@ -17,20 +18,22 @@ const Navbar: React.FC = () => {
             </div>
             <div style={{ display: 'flex', gap: '2rem' }}>
                 {['Home', 'Skills', 'Experience', 'Projects'].map((item) => (
-                    <a
-                        key={item}
-                        href={`#${item.toLowerCase()}`}
-                        className="nav-link"
-                        style={{
-                            color: 'var(--text-main)',
-                            textDecoration: 'none',
-                            fontSize: '1rem',
-                            fontWeight: '500',
-                            transition: 'all 0.3s ease'
-                        }}
-                    >
-                        {item}
-                    </a>
+                    <Magnetic key={item} strength={0.3}>
+                        <a
+                            href={`#${item.toLowerCase()}`}
+                            className="nav-link"
+                            style={{
+                                color: 'var(--text-main)',
+                                textDecoration: 'none',
+                                fontSize: '1rem',
+                                fontWeight: '500',
+                                transition: 'all 0.3s ease',
+                                display: 'inline-block'
+                            }}
+                        >
+                            {item}
+                        </a>
+                    </Magnetic>
                 ))}
             </div>
         </nav>

@@ -1,10 +1,15 @@
 import React from 'react';
+import Magnetic from './Magnetic.tsx';
 
 interface HeroProps {
     basics?: {
         name: string;
         label: string;
         summary: string;
+        profiles?: {
+            network: string;
+            url: string;
+        }[];
     };
 }
 
@@ -27,18 +32,51 @@ const Hero: React.FC<HeroProps> = ({ basics }) => {
                 <h2 style={{ fontSize: '2rem', color: 'var(--text-dim)', marginBottom: '2rem' }}>
                     {basics?.label}
                 </h2>
-                <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', marginBottom: '2.5rem', maxWidth: '600px' }}>
+                <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', marginBottom: '1.5rem', maxWidth: '600px' }}>
                     {basics?.summary}
                 </p>
+
+                <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '2.5rem' }}>
+                    {basics?.profiles?.map((profile, i) => (
+                        <Magnetic key={i} strength={0.3}>
+                            <a
+                                href={profile.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: 'var(--text-main)',
+                                    textDecoration: 'none',
+                                    fontSize: '1.1rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    padding: '0.5rem 1rem',
+                                    borderRadius: '8px',
+                                    background: 'rgba(255,255,255,0.05)',
+                                    border: '1px solid var(--glass-border)',
+                                    transition: 'all 0.3s ease'
+                                }}
+                                className="nav-link"
+                            >
+                                {profile.network} ↗
+                            </a>
+                        </Magnetic>
+                    ))}
+                </div>
+
                 <div style={{ display: 'flex', gap: '1rem' }}>
-                    <a href="/resume_nabeel_soudagar.pdf" download="Nabeel_Soudagar_Resume.pdf" style={{ textDecoration: 'none' }}>
-                        <button className="glass" style={{ padding: '1rem 2.5rem', background: 'var(--primary)', color: 'white', fontWeight: '600' }}>
-                            Download Resume
+                    <Magnetic strength={0.2}>
+                        <a href="/resume_nabeel_soudagar.pdf" download="Nabeel_Soudagar_Resume.pdf" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                            <button className="glass" style={{ padding: '1rem 2.5rem', background: 'var(--primary)', color: 'white', fontWeight: '600' }}>
+                                Download Resume
+                            </button>
+                        </a>
+                    </Magnetic>
+                    <Magnetic strength={0.2}>
+                        <button className="glass" style={{ padding: '1rem 2.5rem', background: 'transparent', color: 'var(--text-main)', border: '1px solid var(--glass-border)' }}>
+                            View Projects
                         </button>
-                    </a>
-                    <button className="glass" style={{ padding: '1rem 2.5rem', background: 'transparent', color: 'var(--text-main)', border: '1px solid var(--glass-border)' }}>
-                        View Projects
-                    </button>
+                    </Magnetic>
                 </div>
             </div>
 

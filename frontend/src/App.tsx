@@ -5,6 +5,7 @@ import Experience from './components/Experience.tsx'
 import Skills from './components/Skills.tsx'
 import Projects from './components/Projects.tsx'
 import ChatBot from './components/ChatBot.tsx'
+import Background from './components/Background.tsx'
 import './index.css'
 
 const App: React.FC = () => {
@@ -27,6 +28,8 @@ const App: React.FC = () => {
 
     document.querySelectorAll('section').forEach(section => {
       section.classList.add('reveal');
+      if (section.id === 'skills') section.classList.add('pop');
+      if (section.id === 'projects') section.classList.add('zoom');
       observer.observe(section);
     });
 
@@ -35,6 +38,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
+      <Background />
       <Navbar />
       <main className="container">
         <Hero basics={portfolio?.basics} />
