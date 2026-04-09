@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './components/Navbar.tsx'
 import Hero from './components/Hero.tsx'
 import Experience from './components/Experience.tsx'
@@ -7,16 +7,12 @@ import Projects from './components/Projects.tsx'
 import ChatBot from './components/ChatBot.tsx'
 import Background from './components/Background.tsx'
 import './index.css'
+import resumeData from './data/resume.json'
 
 const App: React.FC = () => {
-  const [portfolio, setPortfolio] = useState<any>(null)
+  const portfolio = resumeData
 
   useEffect(() => {
-    fetch('https://ai-port.onrender.com/portfolio')
-      .then(res => res.json())
-      .then(data => setPortfolio(data))
-      .catch(err => console.error("Error fetching portfolio:", err))
-
     // Scroll Reveal Observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
