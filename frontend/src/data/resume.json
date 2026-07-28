@@ -1,10 +1,10 @@
 {
     "basics": {
         "name": "Nabeel Soudagar",
-        "label": "Full Stack Developer | CS Engineering Student",
+        "label": "Full Stack Developer | Web & Cross-Platform Mobile",
         "email": "nabeelsoudagar1050@gmail.com",
         "phone": "+91 7022461499",
-        "summary": "Final year Computer Science Engineering student with hands-on experience in building and maintaining web applications. Proven ability to apply computer science principles to solve complex coding challenges and improve system performance. Gained valuable industry insights through a professional internship at VTU VRIF, focusing on real-world IT workflows and collaborative development.",
+        "summary": "Full Stack Developer with 2+ years of experience designing, building, and deploying scalable web and mobile applications using React.js, React Native, Node.js, Express.js, PostgreSQL, and Supabase. Track record of delivering paid, production-grade solutions for corporate clients, including a full-stack platform for Infinity Group. Currently building cross-platform mobile features at Turtu, with additional experience across AI-powered image analysis, telemedicine, and business-management platforms.",
         "location": {
             "city": "Belgaum",
             "region": "Karnataka",
@@ -13,26 +13,30 @@
         "profiles": [
             {
                 "network": "GitHub",
-                "url": "https://github.com/NabeelSoudagar"
+                "url": "https://github.com/nabeelsoudagar"
             },
             {
                 "network": "LinkedIn",
-                "url": "https://www.linkedin.com/in/nabeel-soudagar-036752285/"
+                "url": "https://linkedin.com/in/nabeelsoudagar"
+            },
+            {
+                "network": "Portfolio",
+                "url": "https://nabeelsoudagar.vercel.app/"
             }
         ]
     },
     "education": [
         {
-            "institution": "S G Balekundri Institute of Technology",
+            "institution": "SG Balekundri Institute of Technology",
             "area": "Computer Science & Engineering",
             "studyType": "B.E.",
             "startDate": "2022",
-            "endDate": "Present",
-            "score": "7.8"
+            "endDate": "2026",
+            "score": "CGPA: 8.1"
         },
         {
-            "institution": "Islamiya P U College Camp",
-            "area": "PUC",
+            "institution": "Islamiya P.U. College Camp",
+            "area": "Pre-University Course (PUC)",
             "startDate": "2020",
             "endDate": "2022",
             "score": "70%"
@@ -46,52 +50,67 @@
     ],
     "work": [
         {
-            "company": "VRIF (VTU)",
+            "company": "Turtu",
+            "position": "Full Stack Developer",
+            "startDate": "2026",
+            "endDate": "Present",
+            "summary": "Developed and shipped 6+ production features for cross-platform mobile applications using React Native, supporting active end users across iOS and Android. Architected reusable UI components and centralized state management, cutting feature delivery time by 15% under Agile/Scrum sprint cycles. Implemented secure REST APIs with JWT authentication and integrated CI/CD pipelines, enabling weekly production deployments with zero downtime. Partnered with cross-functional teams to debug and optimize application performance, resolving 20+ production issues and improving app responsiveness."
+        },
+        {
+            "company": "VTU Research & Innovation Foundation (VRIF)",
             "position": "Full Stack Developer Intern",
-            "startDate": "2025",
-            "endDate": "2025",
-            "summary": "Duration: 8 Months. Focused on real-world IT workflows and collaborative development within the VTU VRIF framework."
+            "startDate": "2024",
+            "endDate": "2025 (1 Year)",
+            "summary": "Built and maintained web application features end-to-end using modern frontend and backend technologies. Implemented RESTful APIs and optimized SQL queries, reducing API response time by 20% and improving overall application performance. Collaborated with engineering teams on Test-Driven Development (TDD), debugging, and deployment workflows in production IT environments."
         }
     ],
     "skills": [
         {
-            "name": "Programming Languages",
+            "name": "Languages",
             "keywords": [
-                "C",
+                "JavaScript",
+                "TypeScript",
                 "Java",
                 "Python",
-                "JavaScript"
+                "C"
             ]
         },
         {
             "name": "Frontend Tech",
             "keywords": [
-                "HTML",
-                "CSS",
-                "React",
-                "Vue",
-                "Tailwind CSS"
+                "React.js",
+                "React Native",
+                "Next.js",
+                "Vue.js",
+                "HTML5",
+                "CSS3",
+                "Tailwind CSS",
+                "Redux"
             ]
         },
         {
-            "name": "Backend & Database",
+            "name": "Backend & Databases",
             "keywords": [
                 "Node.js",
                 "Express.js",
                 "PHP",
-                "FastAPI",
-                "MySQL",
+                "REST APIs",
                 "PostgreSQL",
-                "MongoDB"
+                "MySQL",
+                "MongoDB",
+                "Supabase"
             ]
         },
         {
-            "name": "Tools & Platforms",
+            "name": "Tools & Practices",
             "keywords": [
                 "Git",
                 "GitHub",
-                "VS Code",
-                "Supabase",
+                "CI/CD",
+                "Docker",
+                "Agile/Scrum",
+                "JWT Authentication",
+                "TDD",
                 "Vercel",
                 "Render"
             ]
@@ -100,35 +119,45 @@
     "projects": [
         {
             "name": "AI Image Detector",
-            "description": "AI-powered image detector which identify the image is generated using AI or it is a real image.",
+            "description": "Engineered an AI-powered image analysis platform using the Gemini API to classify images as AI-generated or authentic with high accuracy.",
             "url": "https://image-detector-1.onrender.com/",
-            "techStack": "React.js, Node.js, Express.js, PostgreSQL, Supabase, Gemini API"
+            "techStack": "React.js, Node.js, Express, PostgreSQL, Supabase, Gemini API"
         },
         {
-            "name": "Telemedicine Healthcare",
-            "description": "Virtual consultation platform enabling remote doctor-patient interaction, appointment booking, and digital health monitoring.",
+            "name": "RoadSide Rescue",
+            "description": "Built a real-time roadside assistance platform connecting stranded drivers with nearby service providers via live, location-based requests.",
+            "url": "https://roadside-rescue.vercel.app/landing",
+            "techStack": "Next.js, Node.js, Supabase, PostgreSQL"
+        },
+        {
+            "name": "Telemedicine Healthcare Platform",
+            "description": "Created a virtual consultation portal enabling remote doctor-patient appointments, appointment booking, and digital health monitoring.",
             "url": "https://sih-copy-iota.vercel.app/",
-            "techStack": "Vue.js, Node.js, Express js, Supabase, Postgresql"
+            "techStack": "Vue.js, Node.js, Express.js, Supabase, PostgreSQL"
         },
         {
-            "name": "Civil Project",
-            "description": "A full-service construction and infrastructure development firm offering end-to-end solutions from initial planning and design to construction execution.",
+            "name": "Civil Construction Site / Infinity Group",
+            "description": "Built an online document upload and instant printing service with secure file handling and a streamlined user interface, delivering a commercial platform for Infinity Group.",
             "url": "https://infinitygroup.tech/",
-            "techStack": "HTML, Tailwind CSS, JavaScript"
+            "techStack": "Vue.js, Node.js, PostgreSQL, Supabase, Tailwind CSS"
         },
         {
-            "name": "Print_My_Document",
-            "description": "Online document upload and instant printing service with secure file handling and easy user interface.",
+            "name": "Print My Document",
+            "description": "Online document upload and instant printing service with secure file handling and an intuitive user interface.",
             "url": "https://print-my-doc.vercel.app/",
             "techStack": "Vue.js, Node.js, PostgreSQL, Supabase"
         },
         {
             "name": "EGGZOTIKA",
-            "description": " Built a custom web application for EggZotika to streamline their digital branding and customer outreach.",
+            "description": "Built a custom web application for EggZotika to streamline their digital branding and customer outreach.",
             "url": "https://eggzotika.netlify.app/",
-            "techStack": "react js "
+            "techStack": "React.js"
         }
     ],
+    "certifications_and_languages": {
+        "certifications": ["Smart India Hackathon (SIH) Participant", "JavaScript for Beginners"],
+        "spoken_languages": ["English", "Hindi", "Marathi", "Urdu", "Kannada (Foundation)"]
+    },
     "awards": [
         {
             "title": "Best boy in 10th",
