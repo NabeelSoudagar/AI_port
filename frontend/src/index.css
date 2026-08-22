@@ -45,6 +45,7 @@ body {
   background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 4s linear infinite;
 }
@@ -165,7 +166,7 @@ h3 {
   }
 
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 
   h1 {
@@ -191,26 +192,34 @@ h3 {
   }
 
   .hero-image-container {
-    flex: 0 0 300px !important;
-    height: 300px !important;
-    margin-top: 2rem;
+    flex: 0 0 min(70vw, 300px) !important;
+    width: min(70vw, 300px) !important;
+    height: min(70vw, 300px) !important;
+    aspect-ratio: 1 / 1;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .hero-buttons {
     justify-content: center !important;
+    flex-wrap: wrap !important;
   }
 
   .navbar-container {
-    margin: 1rem !important;
-    padding: 0.8rem 1.2rem !important;
+    margin: 0.5rem !important;
+    padding: 1rem !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
   }
 
   .navbar-links {
-    gap: 1rem !important;
+    gap: 0.8rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
   }
 
   .nav-link {
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important;
   }
 
   /* Chatbot Mobile Fixes */
@@ -231,8 +240,9 @@ h3 {
     max-width: 400px;
   }
 
-  /* Projects Grid Mobile fix */
-  #projects div {
+  /* Grids Mobile fix */
+  #projects > div:nth-of-type(1),
+  #skills > div:nth-of-type(1) {
     grid-template-columns: 1fr !important;
   }
 }

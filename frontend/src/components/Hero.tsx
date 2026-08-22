@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = ({ basics }) => {
             padding: '4rem 0',
             flexWrap: 'wrap'
         }}>
-            <div style={{ flex: '1', minWidth: '300px' }}>
+            <div style={{ flex: '1', minWidth: 'min(100%, 300px)' }}>
                 <h1 style={{ fontSize: '4rem', marginBottom: '0.5rem', lineHeight: '1.1' }}>
                     Hi, I'm <span className="gradient-text">{basics?.name || 'Loading...'}</span>
                 </h1>
@@ -100,7 +100,7 @@ const Hero: React.FC<HeroProps> = ({ basics }) => {
                     <img
                         src="/profile.jpeg"
                         alt={basics?.name}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                         onError={(e) => {
                             (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400?text=Your+Photo';
                         }}
