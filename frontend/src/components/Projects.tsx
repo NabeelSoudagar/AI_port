@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
 interface ProjectsProps {
     projects?: {
@@ -8,42 +8,26 @@ interface ProjectsProps {
     }[];
 }
 
+import Tilt from 'react-parallax-tilt';
+
 const ProjectCard: React.FC<{ project: any }> = ({ project }) => {
-    const cardRef = useRef<HTMLDivElement>(null);
-    const [rotate, setRotate] = useState({ x: 0, y: 0 });
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!cardRef.current) return;
-        const card = cardRef.current;
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-
-        setRotate({ x: rotateX, y: rotateY });
-    };
-
-    const handleMouseLeave = () => {
-        setRotate({ x: 0, y: 0 });
-    };
-
     return (
-        <div
-            ref={cardRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
+        <Tilt
+            glareEnable={true}
+            glareMaxOpacity={0.1}
+            glareColor="#ffffff"
+            glarePosition="all"
+            scale={1.02}
+            transitionSpeed={2500}
+            tiltMaxAngleX={10}
+            tiltMaxAngleY={10}
             className="glass"
             style={{
                 padding: '2rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                perspective: '1000px',
-                transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-                transition: 'transform 0.1s ease-out, box-shadow 0.3s ease',
+                height: '100%',
                 transformStyle: 'preserve-3d'
             }}
         >
@@ -55,11 +39,12 @@ const ProjectCard: React.FC<{ project: any }> = ({ project }) => {
                 color: 'var(--primary)',
                 textDecoration: 'none',
                 fontWeight: '600',
-                transform: 'translateZ(30px)'
+                transform: 'translateZ(30px)',
+                display: 'inline-block'
             }}>
                 View Project →
             </a>
-        </div>
+        </Tilt>
     );
 };
 

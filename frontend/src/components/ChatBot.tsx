@@ -6,6 +6,25 @@ const ChatBot: React.FC = () => {
     const [history, setHistory] = useState<{ role: string; content: string }[]>([]);
     const [loading, setLoading] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
 
     const suggestions = [
         "What are his strongest skills?",
@@ -51,7 +70,7 @@ const ChatBot: React.FC = () => {
     };
 
     return (
-        <div className="chatbot-container" style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 2000, display: 'flex', alignItems: 'flex-end', gap: '1rem' }}>
+        <div ref={wrapperRef} className="chatbot-container" style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 2000, display: 'flex', alignItems: 'flex-end', gap: '1rem' }}>
             {isOpen && (
                 <div className="glass chatbot-suggestions-panel" style={{
                     width: '200px',

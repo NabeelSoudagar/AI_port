@@ -1,5 +1,7 @@
 import React from 'react';
 import Magnetic from './Magnetic.tsx';
+import Terminal from './Terminal.tsx';
+import { motion } from 'framer-motion';
 
 interface HeroProps {
     basics?: {
@@ -26,15 +28,30 @@ const Hero: React.FC<HeroProps> = ({ basics }) => {
             flexWrap: 'wrap'
         }}>
             <div style={{ flex: '1', minWidth: 'min(100%, 300px)' }}>
-                <h1 style={{ fontSize: '4rem', marginBottom: '0.5rem', lineHeight: '1.1' }}>
+                <motion.h1 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    style={{ fontSize: '4rem', marginBottom: '0.5rem', lineHeight: '1.1' }}
+                >
                     Hi, I'm <span className="gradient-text">{basics?.name || 'Loading...'}</span>
-                </h1>
-                <h2 style={{ fontSize: '2rem', color: 'var(--text-dim)', marginBottom: '2rem' }}>
+                </motion.h1>
+                <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    style={{ fontSize: '2rem', color: 'var(--text-dim)', marginBottom: '2rem' }}
+                >
                     {basics?.label}
-                </h2>
-                <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', marginBottom: '1.5rem', maxWidth: '600px' }}>
+                </motion.h2>
+                <motion.p 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    style={{ fontSize: '1.2rem', color: 'var(--text-dim)', marginBottom: '1.5rem', maxWidth: '600px' }}
+                >
                     {basics?.summary}
-                </p>
+                </motion.p>
 
                 <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '2.5rem' }} className="hero-buttons">
                     {basics?.profiles?.map((profile, i) => (
@@ -64,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ basics }) => {
                     ))}
                 </div>
 
-                <div style={{ display: 'flex', gap: '1rem' }} className="hero-buttons">
+                <div style={{ display: 'flex', gap: '1rem', marginBottom: '3rem' }} className="hero-buttons">
                     <Magnetic strength={0.2}>
                         <a href="/resume_nabeel_soudagar.pdf" download="Nabeel_Soudagar_Resume.pdf" style={{ textDecoration: 'none', display: 'inline-block' }}>
                             <button className="glass" style={{ padding: '1rem 2.5rem', background: 'var(--primary)', color: 'white', fontWeight: '600' }}>
@@ -73,11 +90,21 @@ const Hero: React.FC<HeroProps> = ({ basics }) => {
                         </a>
                     </Magnetic>
                     <Magnetic strength={0.2}>
-                        <button className="glass" style={{ padding: '1rem 2.5rem', background: 'transparent', color: 'var(--text-main)', border: '1px solid var(--glass-border)' }}>
-                            View Projects
-                        </button>
+                        <a href="#projects" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                            <button className="glass" style={{ padding: '1rem 2.5rem', background: 'transparent', color: 'var(--text-main)', border: '1px solid var(--glass-border)' }}>
+                                View Projects
+                            </button>
+                        </a>
                     </Magnetic>
                 </div>
+                
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                    <Terminal />
+                </motion.div>
             </div>
 
             <div className="float hero-image-container" style={{

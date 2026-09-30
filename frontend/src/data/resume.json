@@ -18,10 +18,6 @@
             {
                 "network": "LinkedIn",
                 "url": "https://linkedin.com/in/nabeelsoudagar"
-            },
-            {
-                "network": "Portfolio",
-                "url": "https://nabeelsoudagar.vercel.app/"
             }
         ]
     },
@@ -52,8 +48,8 @@
         {
             "company": "Turtu",
             "position": "Full Stack Developer",
-            "startDate": "2026",
-            "endDate": "Present",
+            "startDate": "March 2026",
+            "endDate": "July 2026",
             "summary": "Developed and shipped 6+ production features for cross-platform mobile applications using React Native, supporting active end users across iOS and Android. Architected reusable UI components and centralized state management, cutting feature delivery time by 15% under Agile/Scrum sprint cycles. Implemented secure REST APIs with JWT authentication and integrated CI/CD pipelines, enabling weekly production deployments with zero downtime. Partnered with cross-functional teams to debug and optimize application performance, resolving 20+ production issues and improving app responsiveness."
         },
         {
